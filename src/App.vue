@@ -10,37 +10,14 @@ export default {
     AppMain,
   },
 
-  methods: {
-    updateCurrentDate() {
-      this.currentDate = new Date();
-    },
-  },
+  methods: {},
 
-  mounted() {
-    this.updateCurrentDate();
-    setInterval(() => this.updateCurrentDate(), 1000);
-  },
+  mounted() {},
 
-  computed: {
-    calculateAverage() {
-      if (this.scores.length === 0) {
-        return 0;
-      } else {
-        let total = this.scores.reduce((a, b) => a + b, 0);
-        return total / this.scores.length;
-      }
-    },
-  },
+  computed: {},
 
   data() {
-    return {
-      firstName: "jae",
-      lastName: "Brown",
-      scores: [90, 85, 80],
-      gradeLevel: 4,
-      avatarURL: "https://source.boringavatars.com/bauhaus/80/jaeb",
-      currentDate: new Date(),
-    };
+    return {};
   },
 };
 </script>
