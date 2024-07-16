@@ -30,9 +30,6 @@ export default {
     <main>
       <AppMain />
     </main>
-    <section>
-      <AppCards />
-    </section>
   </div>
 </template>
 
@@ -41,7 +38,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.grid-container {
+/* .grid-container {
   display: grid;
   grid-column: repeat(2, 1fr);
   grid-template-rows: 1fr 8fr;
@@ -60,5 +57,5 @@ main {
 
 section {
   grid-area: cardsArea;
-}
+} */
 </style>
