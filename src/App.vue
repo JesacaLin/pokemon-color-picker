@@ -37,25 +37,6 @@ export default {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-/* .grid-container {
-  display: grid;
-  grid-column: repeat(2, 1fr);
-  grid-template-rows: 1fr 8fr;
-  grid-template-areas:
-    "header header"
-    "main cardsArea";
-}
-
-header {
-  grid-area: header;
-}
-
-main {
-  grid-area: main;
-}
-
-section {
-  grid-area: cardsArea;
-} */
 </style>

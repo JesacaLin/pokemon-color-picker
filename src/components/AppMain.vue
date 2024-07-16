@@ -65,7 +65,11 @@ export default {
 main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
+  /* display: flex;
+  justify-content: space-around;
+  row-gap: 1rem;
+  column-gap: 1rem; */
+  /* width: 100%; */
 }
 
 .container {

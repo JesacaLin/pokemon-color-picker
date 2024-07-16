@@ -8,8 +8,8 @@ export default {};
 h2 {
   background-color: lightblue;
   width: 100%;
-
   text-align: center;
   padding: 20px;
+  margin-bottom: 20px;
 }
 </style>

@@ -1,16 +1,12 @@
 <template>
-  <main>
-    <h1>This is a cards container</h1>
-    <section>
-      <!-- <AppSingleCard /> -->
-      <AppSingleCard
-        v-if="cardsArray && cardsArray.pokemon_species"
-        v-for="pokemon in cardsArray.pokemon_species"
-        :key="pokemon.name"
-        :pokemon="pokemon"
-      />
-    </section>
-  </main>
+  <section class="cardContainer">
+    <AppSingleCard
+      v-if="cardsArray && cardsArray.pokemon_species"
+      v-for="pokemon in pokemonIdProcessor"
+      :key="pokemon.id"
+      :pokemon="pokemon"
+    />
+  </section>
 </template>
 <script>
 import AppSingleCard from "./AppSingleCard.vue";
@@ -21,6 +17,21 @@ export default {
   },
   props: {
     cardsArray: Object,
+  },
+  computed: {
+    pokemonIdProcessor() {
+      if (
+        !this.cardsArray.pokemon_species ||
+        this.cardsArray.pokemon_species.length === 0
+      ) {
+        return [];
+      }
+
+      return this.cardsArray.pokemon_species.map((pokemon) => {
+        const id = pokemon.url.split("/").slice(-2, -1)[0];
+        return { ...pokemon, id };
+      });
+    },
   },
   data() {
     return {
@@ -33,13 +44,13 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  padding-top: 30px;
-}
-main {
-  background-color: rgb(234, 233, 233);
-  width: 100%;
-  height: 100%;
+.cardContainer {
+  /* display: flex;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+  row-gap: 2.5rem;
+  column-gap: 4rem;
 }
 </style>
